@@ -30,7 +30,7 @@ public class TicketBookingController {
 	
 	@CrossOrigin
 	@GetMapping(value="/ticketId/{ticketId}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Ticket getTicketById(@PathVariable("ticketId")Long ticketId){
+	public Ticket getTicketById(@PathVariable("ticketId")Integer ticketId){
 		return ticketBookingService.getTicketById(ticketId);
 	}
 	
@@ -48,13 +48,13 @@ public class TicketBookingController {
 	
 	@CrossOrigin
 	@DeleteMapping(value="/ticketId/{ticketId}")
-	public void deleteTicket(@PathVariable("ticketId")Long ticketId){
+	public void deleteTicket(@PathVariable("ticketId")Integer ticketId){
 		ticketBookingService.deleteTicket(ticketId);
 	}
 	
 	@CrossOrigin
 	@PutMapping(value="/ticketId/{ticketId}/email/{newEmail:.+}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Ticket updateTicket(@PathVariable("ticketId")Long ticketId,@PathVariable("newEmail")String newEmail){
+	public Ticket updateTicket(@PathVariable("ticketId")Integer ticketId,@PathVariable("newEmail")String newEmail){
 		return ticketBookingService.updateTicket(ticketId,newEmail);
 	}
 }

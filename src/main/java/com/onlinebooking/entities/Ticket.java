@@ -4,13 +4,13 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "ticket_details", schema = "ticket")
+@Table(name = "ticket_details")
 public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long ticketId;
+    private  Integer ticketId;
 
     @Column(name = "passenger_name", nullable = false)
     private String passengerName;
@@ -27,11 +27,11 @@ public class Ticket {
     @Column(name = "email", unique = true)
     private String email;
 
-    public Long getTicketId() {
+    public Integer getTicketId() {
         return ticketId;
     }
 
-    public void setTicketId(Long ticketId) {
+    public void setTicketId(Integer ticketId) {
         this.ticketId = ticketId;
     }
 
